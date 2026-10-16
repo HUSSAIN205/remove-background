@@ -1,107 +1,63 @@
-# 🔊 Text-to-Speech Converter
+# 🖼️ Background Remover Using Python
 
-A simple and interactive **Text-to-Speech (TTS) web application** built with Python and Streamlit. This application converts written text into natural-sounding speech in multiple languages and allows users to listen to and download the generated audio as an MP3 file.
+A simple Python application that automatically removes the background from images using the `rembg` library. It takes an input image, processes it using AI-powered background removal, and saves the result as a PNG file with a transparent background.
 
 ## ✨ Features
 
-- 📝 **Text Input:** Enter text to convert into speech.
-- 🌐 **Multilingual Support:** Supports English, Hindi, Kannada, Marathi, Tamil, and Telugu.
-- 🐢 **Slow Speech Mode:** Adjust speech speed for easier listening.
-- 🔊 **Audio Playback:** Listen to generated speech directly in your browser.
-- 📥 **MP3 Download:** Download generated speech for offline use.
-- 🌍 **Public Access:** Share the application online using ngrok tunneling.
-- ⚡ **Interactive UI:** Simple and user-friendly interface powered by Streamlit.
+- 🪄 **Automatic Background Removal:** Removes image backgrounds with minimal effort.
+- 🤖 **AI-Powered Processing:** Uses the `rembg` library for foreground detection.
+- 🖼️ **Transparent Background:** Exports the processed image in PNG format.
+- 📁 **Simple File Handling:** Reads an input image and saves the output automatically.
+- ⚡ **Easy to Use:** Requires only a few lines of Python code.
 
 ## 🛠️ Technologies Used
 
-- **Python** — Core programming language
-- **Streamlit** — Web application framework
-- **gTTS (Google Text-to-Speech)** — Speech generation
-- **Pyngrok** — Secure tunneling for public access
-- **BytesIO** — In-memory audio processing
+- Python
+- rembg
+- PNG and JPG image formats
 
 ## 🚀 Getting Started
 
-### 1. Clone the Repository
+### 1. Install the Required Library
 
 ```bash
-git clone https://github.com/hussain205/YOUR-REPOSITORY-NAME.git
-cd YOUR-REPOSITORY-NAME
+pip install rembg
 ```
 
-Replace `YOUR-REPOSITORY-NAME` with your actual repository name.
+### 2. Add Your Image
 
-### 2. Install Dependencies
+Place your image in the project directory and name it `input.jpg`, or update the input path in the Python script.
+
+### 3. Run the Script
 
 ```bash
-python -m pip install streamlit gTTS pyngrok
+python main.py
 ```
 
-### 3. Configure ngrok
+### 4. Get the Result
 
-Create an account at [ngrok](https://dashboard.ngrok.com/signup) and obtain your authentication token.
+The processed image will be saved as `output.png` in the same directory, with the background removed and transparency preserved where supported.
 
-Set the token in PowerShell:
+## 📂 How It Works
 
-```powershell
-$env:NGROK_AUTHTOKEN="YOUR_NGROK_TOKEN"
-```
-
-Keep your authentication token private and never commit it to GitHub.
-
-### 4. Run the Application
-
-```bash
-python -m streamlit run 4.py
-```
-
-Open the local URL displayed in your terminal. The ngrok public URL will also be available when the tunnel starts successfully.
-
-## 📖 How to Use
-
-1. Enter your text in the input area.
-2. Select your preferred language.
-3. Enable **Speak slowly** if required.
-4. Click **Convert to Speech**.
-5. Listen to the generated audio.
-6. Click **Download MP3** to save the audio file.
-
-## 🌍 Supported Languages
-
-| Language | Code |
-|---|---|
-| English | `en` |
-| Hindi | `hi` |
-| Kannada | `kn` |
-| Marathi | `mr` |
-| Tamil | `ta` |
-| Telugu | `te` |
+1. Reads the input image as binary data.
+2. Passes the image bytes to `rembg.remove()`.
+3. Removes the detected background.
+4. Writes the processed image to a PNG file.
 
 ## 🎯 Use Cases
 
-- Language learning and pronunciation practice
-- Accessibility and text reading
-- Educational applications
-- Audio content creation
-- Multilingual speech generation
-
-## ⚠️ Requirements
-
-- Python 3.9 or later
-- Internet connection for Google Text-to-Speech
-- ngrok account and authentication token for public access
-
-## 🔒 Security
-
-Never upload your ngrok authentication token or other secrets to a public repository. Use environment variables to store credentials securely.
+- Product photography
+- Profile pictures and portraits
+- E-commerce product images
+- Graphic design and marketing materials
+- Image editing and creative projects
 
 ## 👨‍💻 Author
 
 **Hussain Kola**
 
-AI & Machine Learning Engineering Student | Aspiring AI Engineer
-
-- GitHub: [@hussain205](https://github.com/hussain205)
+GitHub: [@hussain205](https://github.com/hussain205)
 
 ---
 
